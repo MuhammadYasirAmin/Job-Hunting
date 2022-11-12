@@ -1,8 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Livewire\Frontend\HomePage;
-use App\Http\Livewire\Frontend\Jobs\AppliedJobs;
+use App\Http\Controllers\Auth\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,5 +14,18 @@ use App\Http\Livewire\Frontend\Jobs\AppliedJobs;
 |
 */
 
-Route::get('/', HomePage::class,)->name('Frontend.index');
-Route::get('/Jobs/Applied-Jobs', AppliedJobs::class,)->name('Frontend.appliedJobs');
+// Admin Routes
+
+Route::prefix('admin')->group(function() {
+    Route::get('/login', [AdminController::class, 'index'])->name('login_form');
+});
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';

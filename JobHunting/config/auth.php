@@ -48,6 +48,14 @@ return [
             'driver' => 'session',
             'provider' => 'companies',
         ],
+        'JobSeeker' => [
+            'driver' => 'session',
+            'provider' => 'job_seekers',
+        ],
+        'Employer' => [
+            'driver' => 'session',
+            'provider' => 'employers',
+        ],
     ],
 
     /*
@@ -79,6 +87,14 @@ return [
         'companies' => [
             'driver' => 'eloquent',
             'model' => App\Models\Auth\Company::class,
+        ],
+        'job_seekers' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Auth\JobSeeker::class,
+        ],
+        'employers' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Auth\Employer::class,
         ],
 
         // 'users' => [

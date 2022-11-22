@@ -28,8 +28,8 @@ class CreateJobPostedsTable extends Migration
             $table->string('Job_Website');
             $table->string('Job_Address');
             $table->text('Job_Desc');
-            $table->string('Job_SDate');
-            $table->string('Job_EDate');
+            $table->date('Job_SDate');
+            $table->date('Job_EDate');
             $table->bigInteger('EMP_ID')->unsigned();
             $table->bigInteger('CMP_ID')->unsigned();
             $table->timestamps();

@@ -26,7 +26,7 @@
     <!-- INNER PAGE BANNER END -->
 @endsection
 
-<form action="{{ route('Employer.PostJob') }}" method="POST">
+<form action="" method="POST">
     @csrf
     <!--Basic Information-->
     <div class="panel panel-default">
@@ -41,8 +41,7 @@
                     <div class="form-group">
                         <label>Job Title</label>
                         <div class="ls-inputicon-box">
-                            <input class="form-control" name="Job_Title" type="text" placeholder="Devid Smith"
-                                required>
+                            <input class="form-control" name="Job_Title" type="text" placeholder="Devid Smith" required>
                             <i class="fs-input-icon fa fa-address-card"></i>
                         </div>
                     </div>
@@ -53,8 +52,8 @@
                     <div class="form-group city-outer-bx has-feedback">
                         <label>Job Category</label>
                         <div class="ls-inputicon-box">
-                            <select class="wt-select-box selectpicker" name="Job_Category" data-live-search="true"
-                                title="" id="j-category" data-bv-field="size" required>
+                            <select class="wt-select-box selectpicker" name="Job_Category" data-live-search="true" title=""
+                                id="j-category" data-bv-field="size" required>
                                 <option disabled selected value="">Select Category</option>
                                 <option value="Accounting and Finance">Accounting and Finance</option>
                                 {{-- <option value="">Clerical &amp; Data Entry</option> --}}
@@ -79,8 +78,8 @@
                     <div class="form-group">
                         <label>Job Type</label>
                         <div class="ls-inputicon-box">
-                            <select class="wt-select-box selectpicker" name="Job_Type" data-live-search="true"
-                                title="" id="s-category" data-bv-field="size" required>
+                            <select class="wt-select-box selectpicker" name="Job_Type" data-live-search="true" title=""
+                                id="s-category" data-bv-field="size" required>
                                 <option class="bs-title-option" value="">Select Category</option>
                                 <option value="Full Time">Full Time</option>
                                 <option value="Freelance">Freelance</option>
@@ -181,8 +180,8 @@
                     <div class="form-group">
                         <label>City</label>
                         <div class="ls-inputicon-box">
-                            <select class="wt-select-box selectpicker" data-live-search="true" required
-                                name="Job_City" title="" id="city" data-bv-field="size">
+                            <select class="wt-select-box selectpicker" data-live-search="true" required name="Job_City" title=""
+                                id="city" data-bv-field="size">
                                 <option class="bs-title-option" value="">City</option>
                                 <option value="Karachi">Karachi</option>
                                 {{-- <option>Melbourne</option>
@@ -220,8 +219,8 @@
                     <div class="form-group">
                         <label>Website</label>
                         <div class="ls-inputicon-box">
-                            <input class="form-control" name="Job_Website" type="url" placeholder="https://..."
-                                required>
+                            <input class="form-control" name="Job_Website" type="url"
+                                placeholder="https://..." required>
                             <i class="fs-input-icon fa fa-globe-americas"></i>
                         </div>
                     </div>
@@ -243,7 +242,8 @@
                 <div class="col-md-12">
                     <div class="form-group">
                         <label>Description</label>
-                        <textarea class="form-control" rows="3" name="Job_Desc" required
+                        <textarea class="form-control" rows="3"
+
                             placeholder="Greetings! We are Galaxy Software Development Company. We hope you enjoy our services and quality."></textarea>
                     </div>
                 </div>
@@ -253,9 +253,9 @@
                     <div class="form-group">
                         <label>Start Date</label>
                         <div class="ls-inputicon-box">
-                            <input class="form-control datepicker" data-provide="datepicker" name="Job_SDate" required
+                            <input class="form-control datepicker" data-provide="datepicker" name="company_since"
                                 type="text" placeholder="mm/dd/yyyy">
-                            <i class="fs-input-icon fa fa-calendar"></i>
+                            <i class="fs-input-icon far fa-calendar"></i>
                         </div>
                     </div>
                 </div>
@@ -265,9 +265,9 @@
                     <div class="form-group">
                         <label>End Date</label>
                         <div class="ls-inputicon-box">
-                            <input class="form-control datepicker" data-provide="datepicker" name="Job_EDate" required
+                            <input class="form-control datepicker" data-provide="datepicker" name="company_since"
                                 type="text" placeholder="mm/dd/yyyy">
-                            <i class="fs-input-icon fa fa-calendar"></i>
+                            <i class="fs-input-icon far fa-calendar"></i>
                         </div>
                     </div>
                 </div>
@@ -275,7 +275,7 @@
                 <div class="col-lg-12 col-md-12">
                     <div class="text-left">
                         <button type="submit" class="site-button m-r5">Publish Job</button>
-                        {{-- <button type="submit" class="site-button outline-primary">Save Draft</button> --}}
+                        <button type="submit" class="site-button outline-primary">Save Draft</button>
                     </div>
                 </div>
 

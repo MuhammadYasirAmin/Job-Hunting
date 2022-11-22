@@ -46,7 +46,7 @@ Route::prefix('Company')->group(function () {
 
 Route::prefix('JobSeeker')->group(function () {
     Route::get('/Login-Form', LoginController::class, )->name('JobSeeker.Login');
-    Route::post('/Login-Form/Submit', [LoginController::class, 'JobSeekerLogin'])->name('JobSeeker.Login.Submit');
+    Route::post('/Login-Form/Submit', [LoginController::class, 'JobSeekerLogin'])->name('login.submit');
     Route::get('/SignUp-Form', SignupController::class, )->name('JobSeeker.SignUp');
     Route::post('/SignUp-Form/Submit', [SignupController::class, 'JobSeekerSignup'])->name('JobSeeker.SignUp.Submit');
     Route::get('/JobSeeker-Dashboard', JobSeekerDashboard::class, )->name('JobSeeker.Dashboard')->middleware('JobSeeker');
@@ -60,10 +60,8 @@ Route::prefix('Employer')->group(function () {
     Route::post('/SignUp-Form/Submit', [SignupController::class, 'EmployerSignup'])->name('Employer.SignUp.Submit');
     Route::get('/Employer-Dashboard', EmployerDashboard::class, )->name('Employer.Dashboard')->middleware('Employer');
     Route::post('/Employer-Company-Post', [EmployerDashboard::class, 'postCompany'])->name('Employer.CompanyPost')->middleware('Employer');
-    Route::get('/Employer-Job-Post', JobsPost::class, )->name('Employer.JobPost')->middleware('Employer');
-    Route::post('/Employer-Post-Job', [JobsPost::class, 'JobPost'] )->name('Employer.PostJob')->middleware('Employer');
     Route::get('/Employer-Manage-Jobs', ManageJobs::class, )->name('Employer.ManageJobs')->middleware('Employer');
-    Route::get('/Employer-Delete-Job/{id}', [ManageJobs::class, 'DeleteJob'] )->name('Employer.DeleteJob')->middleware('Employer');
+    Route::get('/Employer-Job-Post', JobsPost::class, )->name('Employer.JobPost')->middleware('Employer');
     Route::get('/Employer-LogOut', [LoginController::class, 'EmployerLogout'])->name('Employer.Logout')->middleware('Employer');
 });
 

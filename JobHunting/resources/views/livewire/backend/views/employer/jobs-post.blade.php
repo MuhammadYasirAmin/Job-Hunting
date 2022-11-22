@@ -26,7 +26,8 @@
     <!-- INNER PAGE BANNER END -->
 @endsection
 
-<form>
+<form action="{{ route('Employer.PostJob') }}" method="POST">
+    @csrf
     <!--Basic Information-->
     <div class="panel panel-default">
         <div class="panel-heading wt-panel-heading p-a20">
@@ -40,7 +41,8 @@
                     <div class="form-group">
                         <label>Job Title</label>
                         <div class="ls-inputicon-box">
-                            <input class="form-control" name="company_name" type="text" placeholder="Devid Smith">
+                            <input class="form-control" name="Job_Title" type="text" placeholder="Devid Smith"
+                                required>
                             <i class="fs-input-icon fa fa-address-card"></i>
                         </div>
                     </div>
@@ -51,20 +53,20 @@
                     <div class="form-group city-outer-bx has-feedback">
                         <label>Job Category</label>
                         <div class="ls-inputicon-box">
-                            <select class="wt-select-box selectpicker" data-live-search="true" title=""
-                                id="j-category" data-bv-field="size">
+                            <select class="wt-select-box selectpicker" name="Job_Category" data-live-search="true"
+                                title="" id="j-category" data-bv-field="size" required>
                                 <option disabled selected value="">Select Category</option>
-                                <option>Accounting and Finance</option>
-                                <option>Clerical &amp; Data Entry</option>
-                                <option>Counseling</option>
-                                <option>Court Administration</option>
-                                <option>Human Resources</option>
-                                <option>Investigative</option>
-                                <option>IT and Computers</option>
-                                <option>Law Enforcement</option>
-                                <option>Management</option>
-                                <option>Miscellaneous</option>
-                                <option>Public Relations</option>
+                                <option value="Accounting and Finance">Accounting and Finance</option>
+                                {{-- <option value="">Clerical &amp; Data Entry</option> --}}
+                                <option value="Counseling">Counseling</option>
+                                {{-- <option value="">Court Administration</option>
+                                <option value="">Human Resources</option>
+                                <option value="">Investigative</option>
+                                <option value="">IT and Computers</option>
+                                <option value="">Law Enforcement</option>
+                                <option value="">Management</option>
+                                <option value="">Miscellaneous</option>
+                                <option value="">Public Relations</option> --}}
                             </select>
                             <i class="fs-input-icon fa fa-border-all"></i>
                         </div>
@@ -77,14 +79,14 @@
                     <div class="form-group">
                         <label>Job Type</label>
                         <div class="ls-inputicon-box">
-                            <select class="wt-select-box selectpicker" data-live-search="true" title=""
-                                id="s-category" data-bv-field="size">
+                            <select class="wt-select-box selectpicker" name="Job_Type" data-live-search="true"
+                                title="" id="s-category" data-bv-field="size" required>
                                 <option class="bs-title-option" value="">Select Category</option>
-                                <option>Full Time</option>
-                                <option>Freelance</option>
-                                <option>Part Time</option>
-                                <option>Internship</option>
-                                <option>Temporary</option>
+                                <option value="Full Time">Full Time</option>
+                                <option value="Freelance">Freelance</option>
+                                <option value="Part Time">Part Time</option>
+                                <option value="Internship">Internship</option>
+                                <option value="Temporary">Temporary</option>
                             </select>
                             <i class="fs-input-icon fa fa-file-alt"></i>
                         </div>
@@ -97,15 +99,7 @@
                     <div class="form-group">
                         <label>Offered Salary</label>
                         <div class="ls-inputicon-box">
-                            <select class="wt-select-box selectpicker" data-live-search="true" title=""
-                                id="salary" data-bv-field="size">
-                                <option class="bs-title-option" value="">Salary</option>
-                                <option>$500</option>
-                                <option>$1000</option>
-                                <option>$1500</option>
-                                <option>$2000</option>
-                                <option>$2500</option>
-                            </select>
+                            <input class="form-control" name="Job_Salary" type="text" placeholder="$5000" required>
                             <i class="fs-input-icon fa fa-dollar-sign"></i>
                         </div>
                     </div>
@@ -116,8 +110,8 @@
                     <div class="form-group">
                         <label>Experience</label>
                         <div class="ls-inputicon-box">
-                            <input class="form-control" name="company_Email" type="email"
-                                placeholder="E.g. Minimum 3 years">
+                            <input class="form-control" name="Job_Experience" type="text"
+                                placeholder="E.g. Minimum 3 years" required>
                             <i class="fs-input-icon fa fa-user-edit"></i>
                         </div>
                     </div>
@@ -128,8 +122,8 @@
                     <div class="form-group">
                         <label>Qualification</label>
                         <div class="ls-inputicon-box">
-                            <input class="form-control" name="company_Email" type="email"
-                                placeholder="Qualification Title">
+                            <input class="form-control" name="Job_Qualification" type="text"
+                                placeholder="Qualification Title" required>
                             <i class="fs-input-icon fa fa-user-graduate"></i>
                         </div>
                     </div>
@@ -141,11 +135,11 @@
                         <label>Gender</label>
                         <div class="ls-inputicon-box">
                             <select class="wt-select-box selectpicker" data-live-search="true" title=""
-                                id="gender" data-bv-field="size">
+                                id="gender" data-bv-field="size" name="Job_Gender">
                                 <option class="bs-title-option" value="">Gender</option>
-                                <option>Male</option>
-                                <option>Female</option>
-                                <option>Other</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
                             </select>
                             <i class="fs-input-icon fa fa-venus-mars"></i>
                         </div>
@@ -158,10 +152,10 @@
                         <label>Country</label>
                         <div class="ls-inputicon-box">
                             <select class="wt-select-box selectpicker" data-live-search="true" title=""
-                                id="country" data-bv-field="size">
+                                id="country" data-bv-field="size" name="Job_Country" required>
                                 <option class="bs-title-option" value="">Country</option>
-                                <option>Afghanistan</option>
-                                <option>Albania</option>
+                                <option value="Pakistan">Pakistan</option>
+                                {{-- <option>Albania</option>
                                 <option>Algeria</option>
                                 <option>Andorra</option>
                                 <option>Angola</option>
@@ -174,7 +168,7 @@
                                 <option>The Bahamas</option>
                                 <option>Bahrain</option>
                                 <option>Bangladesh</option>
-                                <option>Barbados</option>
+                                <option>Barbados</option> --}}
                             </select>
                             <i class="fs-input-icon fa fa-globe-americas"></i>
                         </div>
@@ -187,11 +181,11 @@
                     <div class="form-group">
                         <label>City</label>
                         <div class="ls-inputicon-box">
-                            <select class="wt-select-box selectpicker" data-live-search="true" title=""
-                                id="city" data-bv-field="size">
+                            <select class="wt-select-box selectpicker" data-live-search="true" required
+                                name="Job_City" title="" id="city" data-bv-field="size">
                                 <option class="bs-title-option" value="">City</option>
-                                <option>Sydney</option>
-                                <option>Melbourne</option>
+                                <option value="Karachi">Karachi</option>
+                                {{-- <option>Melbourne</option>
                                 <option>Brisbane</option>
                                 <option>Perth</option>
                                 <option>Adelaide</option>
@@ -202,46 +196,9 @@
                                 <option>Geelong</option>
                                 <option>Hobart</option>
                                 <option>Townsville</option>
-                                <option>Ipswich</option>
+                                <option>Ipswich</option> --}}
                             </select>
                             <i class="fs-input-icon fa fa-map-marker-alt"></i>
-                        </div>
-                    </div>
-                </div>
-
-
-                <!--Location-->
-                <div class="col-xl-4 col-lg-6 col-md-12">
-                    <div class="form-group">
-                        <label>Location</label>
-                        <div class="ls-inputicon-box">
-                            <input class="form-control" name="company_Email" type="email"
-                                placeholder="Type Address">
-                            <i class="fs-input-icon fa fa-map-marker-alt"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!--Latitude-->
-                <div class="col-xl-4 col-lg-6 col-md-12">
-                    <div class="form-group">
-                        <label>Latitude</label>
-                        <div class="ls-inputicon-box">
-                            <input class="form-control" name="company_Email" type="email"
-                                placeholder="Los Angeles">
-                            <i class="fs-input-icon fa fa-map-pin"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!--longitude-->
-                <div class="col-xl-4 col-lg-6 col-md-12">
-                    <div class="form-group">
-                        <label>Longitude</label>
-                        <div class="ls-inputicon-box">
-                            <input class="form-control" name="company_Email" type="email"
-                                placeholder="Los Angeles">
-                            <i class="fs-input-icon fa fa-map-pin"></i>
                         </div>
                     </div>
                 </div>
@@ -251,7 +208,7 @@
                     <div class="form-group">
                         <label>Email Address</label>
                         <div class="ls-inputicon-box">
-                            <input class="form-control" name="company_Email" type="email"
+                            <input class="form-control" name="Job_Email" type="email" required
                                 placeholder="Devid@example.com">
                             <i class="fs-input-icon fas fa-at"></i>
                         </div>
@@ -263,20 +220,9 @@
                     <div class="form-group">
                         <label>Website</label>
                         <div class="ls-inputicon-box">
-                            <input class="form-control" name="company_website" type="text"
-                                placeholder="https://...">
+                            <input class="form-control" name="Job_Website" type="url" placeholder="https://..."
+                                required>
                             <i class="fs-input-icon fa fa-globe-americas"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!--Est. Since-->
-                <div class="col-xl-4 col-lg-6 col-md-12">
-                    <div class="form-group">
-                        <label>Est. Since</label>
-                        <div class="ls-inputicon-box">
-                            <input class="form-control" name="company_since" type="text" placeholder="Since...">
-                            <i class="fs-input-icon fa fa-clock"></i>
                         </div>
                     </div>
                 </div>
@@ -286,8 +232,8 @@
                     <div class="form-group">
                         <label>Complete Address</label>
                         <div class="ls-inputicon-box">
-                            <input class="form-control" name="company_since" type="text"
-                                placeholder="1363-1385 Sunset Blvd Los Angeles, CA 90026, USA">
+                            <input class="form-control" name="Job_Address" type="text"
+                                placeholder="1363-1385 Sunset Blvd Los Angeles, CA 90026, USA" required>
                             <i class="fs-input-icon fa fa-home"></i>
                         </div>
                     </div>
@@ -297,7 +243,7 @@
                 <div class="col-md-12">
                     <div class="form-group">
                         <label>Description</label>
-                        <textarea class="form-control" rows="3"
+                        <textarea class="form-control" rows="3" name="Job_Desc" required
                             placeholder="Greetings! We are Galaxy Software Development Company. We hope you enjoy our services and quality."></textarea>
                     </div>
                 </div>
@@ -307,9 +253,9 @@
                     <div class="form-group">
                         <label>Start Date</label>
                         <div class="ls-inputicon-box">
-                            <input class="form-control datepicker" data-provide="datepicker" name="company_since"
+                            <input class="form-control datepicker" data-provide="datepicker" name="Job_SDate" required
                                 type="text" placeholder="mm/dd/yyyy">
-                            <i class="fs-input-icon far fa-calendar"></i>
+                            <i class="fs-input-icon fa fa-calendar"></i>
                         </div>
                     </div>
                 </div>
@@ -319,9 +265,9 @@
                     <div class="form-group">
                         <label>End Date</label>
                         <div class="ls-inputicon-box">
-                            <input class="form-control datepicker" data-provide="datepicker" name="company_since"
+                            <input class="form-control datepicker" data-provide="datepicker" name="Job_EDate" required
                                 type="text" placeholder="mm/dd/yyyy">
-                            <i class="fs-input-icon far fa-calendar"></i>
+                            <i class="fs-input-icon fa fa-calendar"></i>
                         </div>
                     </div>
                 </div>
@@ -329,7 +275,7 @@
                 <div class="col-lg-12 col-md-12">
                     <div class="text-left">
                         <button type="submit" class="site-button m-r5">Publish Job</button>
-                        <button type="submit" class="site-button outline-primary">Save Draft</button>
+                        {{-- <button type="submit" class="site-button outline-primary">Save Draft</button> --}}
                     </div>
                 </div>
 

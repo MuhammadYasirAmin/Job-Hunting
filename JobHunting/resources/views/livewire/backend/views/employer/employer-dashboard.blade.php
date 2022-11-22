@@ -27,9 +27,7 @@
 @endsection
 <!--Filter Short By-->
 <div class="twm-right-section-panel site-bg-gray">
-    <form>
-
-
+    
         <!--Basic Information-->
         <div class="panel panel-default">
             <div class="panel-heading wt-panel-heading p-a20">
@@ -37,126 +35,129 @@
             </div>
             <div class="panel-body wt-panel-body p-a20 m-b30 ">
 
-                <div class="row">
+                <form action="{{ route('Employer.CompanyPost') }}" method="POST">
+                    @csrf
+                    <div class="row">
 
-                    <div class="col-xl-6 col-lg-6 col-md-12">
-                        <div class="form-group">
-                            <label>Company Name</label>
-                            <div class="ls-inputicon-box">
-                                <input class="form-control" name="company_name" type="text"
-                                    placeholder="Devid Smith">
-                                <i class="fs-input-icon fa fa-building"></i>
+                        <div class="col-xl-6 col-lg-6 col-md-12">
+                            <div class="form-group">
+                                <label>Company Name</label>
+                                <div class="ls-inputicon-box">
+                                    <input class="form-control" name="CMP_Name" type="text"
+                                        placeholder="Devid Smith" required>
+                                    <i class="fs-input-icon fa fa-building"></i>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="col-xl-6 col-lg-6 col-md-12">
-                        <div class="form-group">
-                            <label>Phone</label>
-                            <div class="ls-inputicon-box">
-                                <input class="form-control" name="company_phone" type="text"
-                                    placeholder="(251) 1234-456-7890">
-                                <i class="fs-input-icon fa fa-phone-alt"></i>
+                        <div class="col-xl-6 col-lg-6 col-md-12">
+                            <div class="form-group">
+                                <label>Phone</label>
+                                <div class="ls-inputicon-box">
+                                    <input class="form-control" name="CMP_Phone" type="text"
+                                        placeholder="(251) 1234-456-7890" required>
+                                    <i class="fs-input-icon fa fa-phone-alt"></i>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="col-xl-6 col-lg-6 col-md-12">
-                        <div class="form-group">
-                            <label>Email Address</label>
-                            <div class="ls-inputicon-box">
-                                <input class="form-control" name="company_Email" type="email"
-                                    placeholder="Devid@example.com">
-                                <i class="fs-input-icon fas fa-at"></i>
+                        <div class="col-xl-6 col-lg-6 col-md-12">
+                            <div class="form-group">
+                                <label>Email Address</label>
+                                <div class="ls-inputicon-box">
+                                    <input class="form-control" name="CMP_Email" type="email"
+                                        placeholder="Devid@example.com" required>
+                                    <i class="fs-input-icon fas fa-at"></i>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="col-xl-6 col-lg-6 col-md-12">
-                        <div class="form-group">
-                            <label>Website</label>
-                            <div class="ls-inputicon-box">
-                                <input class="form-control" name="company_website" type="text"
-                                    placeholder="https://devsmith.net">
-                                <i class="fs-input-icon fa fa-globe-americas"></i>
+                        <div class="col-xl-6 col-lg-6 col-md-12">
+                            <div class="form-group">
+                                <label>Website</label>
+                                <div class="ls-inputicon-box">
+                                    <input class="form-control" name="CMP_Website" type="url"
+                                        placeholder="https://devsmith.net" required>
+                                    <i class="fs-input-icon fa fa-globe-americas"></i>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
 
-                    <div class="col-xl-4 col-lg-6 col-md-12">
-                        <div class="form-group city-outer-bx has-feedback">
-                            <label>Country</label>
-                            <div class="ls-inputicon-box">
-                                <input class="form-control" name="company_since" type="text" placeholder="USA">
-                                <i class="fs-input-icon fa fa-globe-americas"></i>
-                            </div>
+                        <div class="col-xl-4 col-lg-6 col-md-12">
+                            <div class="form-group city-outer-bx has-feedback">
+                                <label>Country</label>
+                                <div class="ls-inputicon-box">
+                                    <input class="form-control" name="CMP_Country" type="text" placeholder="USA" required>
+                                    <i class="fs-input-icon fa fa-globe-americas"></i>
+                                </div>
 
-                        </div>
-                    </div>
-
-                    <div class="col-xl-4 col-lg-6 col-md-12">
-                        <div class="form-group city-outer-bx has-feedback">
-                            <label>City</label>
-                            <div class="ls-inputicon-box">
-                                <input class="form-control" name="company_since" type="text" placeholder="Texas">
-                                <i class="fs-input-icon fa fa-globe-americas"></i>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="col-xl-4 col-lg-12 col-md-12">
-                        <div class="form-group city-outer-bx has-feedback">
-                            <label>Postcode</label>
-                            <div class="ls-inputicon-box">
-                                <input class="form-control" name="company_since" type="text" placeholder="75462">
-                                <i class="fs-input-icon fas fa-map-pin"></i>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="col-xl-12 col-lg-12 col-md-12">
-                        <div class="form-group city-outer-bx has-feedback">
-                            <label>Full Address</label>
-                            <div class="ls-inputicon-box">
-                                <input class="form-control" name="company_since" type="text"
-                                    placeholder="1363-1385 Sunset Blvd Angeles, CA 90026 ,USA">
-                                <i class="fs-input-icon fas fa-map-marker-alt"></i>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="col-xl-12 col-lg-12 col-md-12">
-                        <div class="twm-s-map mb-5">
-                            <h4 class="section-head-small mb-4">Location</h4>
-                            <div class="twm-s-map-iframe">
-                                <iframe height="270"
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3304.8534521658976!2d-118.2533646842856!3d34.073270780600225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c6fd9829c6f3%3A0x6ecd11bcf4b0c23a!2s1363%20Sunset%20Blvd%2C%20Los%20Angeles%2C%20CA%2090026%2C%20USA!5e0!3m2!1sen!2sin!4v1620815366832!5m2!1sen!2sin"></iframe>
                             </div>
                         </div>
-                    </div>
 
+                        <div class="col-xl-4 col-lg-6 col-md-12">
+                            <div class="form-group city-outer-bx has-feedback">
+                                <label>City</label>
+                                <div class="ls-inputicon-box">
+                                    <input class="form-control" name="CMP_City" type="text" placeholder="Texas" required>
+                                    <i class="fs-input-icon fa fa-globe-americas"></i>
+                                </div>
 
-
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label>Description</label>
-                            <textarea class="form-control" rows="3">Greetings! when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</textarea>
+                            </div>
                         </div>
-                    </div>
 
+                        <div class="col-xl-4 col-lg-12 col-md-12">
+                            <div class="form-group city-outer-bx has-feedback">
+                                <label>Postcode</label>
+                                <div class="ls-inputicon-box">
+                                    <input class="form-control" name="CMP_PostalCode" type="text" placeholder="75462" required>
+                                    <i class="fs-input-icon fas fa-map-pin"></i>
+                                </div>
 
-                    <div class="col-lg-12 col-md-12">
-                        <div class="text-left">
-                            <button type="submit" class="site-button">Save Changes</button>
+                            </div>
                         </div>
+
+                        <div class="col-xl-12 col-lg-12 col-md-12">
+                            <div class="form-group city-outer-bx has-feedback">
+                                <label>Full Address</label>
+                                <div class="ls-inputicon-box">
+                                    <input class="form-control" name="CMP_Address" type="text"
+                                        placeholder="1363-1385 Sunset Blvd Angeles, CA 90026 ,USA" required>
+                                    <i class="fs-input-icon fas fa-map-marker-alt"></i>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        {{-- <div class="col-xl-12 col-lg-12 col-md-12">
+                            <div class="twm-s-map mb-5">
+                                <h4 class="section-head-small mb-4">Location</h4>
+                                <div class="twm-s-map-iframe">
+                                    <iframe height="270"
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3304.8534521658976!2d-118.2533646842856!3d34.073270780600225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c6fd9829c6f3%3A0x6ecd11bcf4b0c23a!2s1363%20Sunset%20Blvd%2C%20Los%20Angeles%2C%20CA%2090026%2C%20USA!5e0!3m2!1sen!2sin!4v1620815366832!5m2!1sen!2sin"></iframe>
+                                </div>
+                            </div>
+                        </div> --}}
+
+
+
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Description</label>
+                                <textarea class="form-control" name="CMP_Desc" required rows="3">Greetings! when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</textarea>
+                            </div>
+                        </div>
+
+
+                        <div class="col-lg-12 col-md-12">
+                            <div class="text-left">
+                                <button type="submit" class="site-button">Save Changes</button>
+                            </div>
+                        </div>
+
+
                     </div>
-
-
-                </div>
+                </form>
 
             </div>
         </div>
@@ -269,5 +270,5 @@
 
             </div>
         </div>
-    </form>
+
 </div>

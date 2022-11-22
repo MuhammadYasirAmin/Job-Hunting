@@ -59,6 +59,7 @@ Route::prefix('Employer')->group(function () {
     Route::get('/SignUp-Form', SignupController::class, )->name('Employer.SignUp');
     Route::post('/SignUp-Form/Submit', [SignupController::class, 'EmployerSignup'])->name('Employer.SignUp.Submit');
     Route::get('/Employer-Dashboard', EmployerDashboard::class, )->name('Employer.Dashboard')->middleware('Employer');
+    Route::post('/Employer-Company-Post', [EmployerDashboard::class, 'postCompany'])->name('Employer.CompanyPost')->middleware('Employer');
     Route::get('/Employer-Manage-Jobs', ManageJobs::class, )->name('Employer.ManageJobs')->middleware('Employer');
     Route::get('/Employer-Job-Post', JobsPost::class, )->name('Employer.JobPost')->middleware('Employer');
     Route::get('/Employer-LogOut', [LoginController::class, 'EmployerLogout'])->name('Employer.Logout')->middleware('Employer');

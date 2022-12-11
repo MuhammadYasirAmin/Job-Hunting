@@ -27,109 +27,111 @@
 @endsection
 <!--Filter Short By-->
 <div class="twm-right-section-panel site-bg-gray">
-    
-        <!--Basic Information-->
-        <div class="panel panel-default">
-            <div class="panel-heading wt-panel-heading p-a20">
-                <h4 class="panel-tittle m-a0">Company Profile</h4>
-            </div>
-            <div class="panel-body wt-panel-body p-a20 m-b30 ">
 
-                <form action="{{ route('Employer.CompanyPost') }}" method="POST">
-                    @csrf
-                    <div class="row">
+    <!--Basic Information-->
+    <div class="panel panel-default">
+        <div class="panel-heading wt-panel-heading p-a20">
+            <h4 class="panel-tittle m-a0">Company Profile</h4>
+        </div>
+        <div class="panel-body wt-panel-body p-a20 m-b30 ">
 
-                        <div class="col-xl-6 col-lg-6 col-md-12">
-                            <div class="form-group">
-                                <label>Company Name</label>
-                                <div class="ls-inputicon-box">
-                                    <input class="form-control" name="CMP_Name" type="text"
-                                        placeholder="Devid Smith" required>
-                                    <i class="fs-input-icon fa fa-building"></i>
-                                </div>
+            <form action="{{ route('Employer.CompanyPost') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="row">
+
+                    <div class="col-xl-6 col-lg-6 col-md-12">
+                        <div class="form-group">
+                            <label>Company Name</label>
+                            <div class="ls-inputicon-box">
+                                <input class="form-control" name="CMP_Name" type="text" placeholder="Devid Smith"
+                                    required>
+                                <i class="fs-input-icon fa fa-building"></i>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="col-xl-6 col-lg-6 col-md-12">
-                            <div class="form-group">
-                                <label>Phone</label>
-                                <div class="ls-inputicon-box">
-                                    <input class="form-control" name="CMP_Phone" type="text"
-                                        placeholder="(251) 1234-456-7890" required>
-                                    <i class="fs-input-icon fa fa-phone-alt"></i>
-                                </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12">
+                        <div class="form-group">
+                            <label>Phone</label>
+                            <div class="ls-inputicon-box">
+                                <input class="form-control" name="CMP_Phone" type="text"
+                                    placeholder="(251) 1234-456-7890" required>
+                                <i class="fs-input-icon fa fa-phone-alt"></i>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="col-xl-6 col-lg-6 col-md-12">
-                            <div class="form-group">
-                                <label>Email Address</label>
-                                <div class="ls-inputicon-box">
-                                    <input class="form-control" name="CMP_Email" type="email"
-                                        placeholder="Devid@example.com" required>
-                                    <i class="fs-input-icon fas fa-at"></i>
-                                </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12">
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <div class="ls-inputicon-box">
+                                <input class="form-control" name="CMP_Email" type="email"
+                                    placeholder="Devid@example.com" required>
+                                <i class="fs-input-icon fas fa-at"></i>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="col-xl-6 col-lg-6 col-md-12">
-                            <div class="form-group">
-                                <label>Website</label>
-                                <div class="ls-inputicon-box">
-                                    <input class="form-control" name="CMP_Website" type="url"
-                                        placeholder="https://devsmith.net" required>
-                                    <i class="fs-input-icon fa fa-globe-americas"></i>
-                                </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12">
+                        <div class="form-group">
+                            <label>Website</label>
+                            <div class="ls-inputicon-box">
+                                <input class="form-control" name="CMP_Website" type="url"
+                                    placeholder="https://devsmith.net" required>
+                                <i class="fs-input-icon fa fa-globe-americas"></i>
                             </div>
                         </div>
+                    </div>
 
 
-                        <div class="col-xl-4 col-lg-6 col-md-12">
-                            <div class="form-group city-outer-bx has-feedback">
-                                <label>Country</label>
-                                <div class="ls-inputicon-box">
-                                    <input class="form-control" name="CMP_Country" type="text" placeholder="USA" required>
-                                    <i class="fs-input-icon fa fa-globe-americas"></i>
-                                </div>
-
+                    <div class="col-xl-4 col-lg-6 col-md-12">
+                        <div class="form-group city-outer-bx has-feedback">
+                            <label>Country</label>
+                            <div class="ls-inputicon-box">
+                                <input class="form-control" name="CMP_Country" type="text" placeholder="USA"
+                                    required>
+                                <i class="fs-input-icon fa fa-globe-americas"></i>
                             </div>
+
                         </div>
+                    </div>
 
-                        <div class="col-xl-4 col-lg-6 col-md-12">
-                            <div class="form-group city-outer-bx has-feedback">
-                                <label>City</label>
-                                <div class="ls-inputicon-box">
-                                    <input class="form-control" name="CMP_City" type="text" placeholder="Texas" required>
-                                    <i class="fs-input-icon fa fa-globe-americas"></i>
-                                </div>
-
+                    <div class="col-xl-4 col-lg-6 col-md-12">
+                        <div class="form-group city-outer-bx has-feedback">
+                            <label>City</label>
+                            <div class="ls-inputicon-box">
+                                <input class="form-control" name="CMP_City" type="text" placeholder="Texas" required>
+                                <i class="fs-input-icon fa fa-globe-americas"></i>
                             </div>
+
                         </div>
+                    </div>
 
-                        <div class="col-xl-4 col-lg-12 col-md-12">
-                            <div class="form-group city-outer-bx has-feedback">
-                                <label>Postcode</label>
-                                <div class="ls-inputicon-box">
-                                    <input class="form-control" name="CMP_PostalCode" type="text" placeholder="75462" required>
-                                    <i class="fs-input-icon fas fa-map-pin"></i>
-                                </div>
-
+                    <div class="col-xl-4 col-lg-12 col-md-12">
+                        <div class="form-group city-outer-bx has-feedback">
+                            <label>Postcode</label>
+                            <div class="ls-inputicon-box">
+                                <input class="form-control" name="CMP_PostalCode" type="text" placeholder="75462"
+                                    required>
+                                <i class="fs-input-icon fas fa-map-pin"></i>
                             </div>
+
                         </div>
+                    </div>
 
-                        <div class="col-xl-12 col-lg-12 col-md-12">
-                            <div class="form-group city-outer-bx has-feedback">
-                                <label>Full Address</label>
-                                <div class="ls-inputicon-box">
-                                    <input class="form-control" name="CMP_Address" type="text"
-                                        placeholder="1363-1385 Sunset Blvd Angeles, CA 90026 ,USA" required>
-                                    <i class="fs-input-icon fas fa-map-marker-alt"></i>
-                                </div>
-
+                    <div class="col-xl-12 col-lg-12 col-md-12">
+                        <div class="form-group city-outer-bx has-feedback">
+                            <label>Full Address</label>
+                            <div class="ls-inputicon-box">
+                                <input class="form-control" name="CMP_Address" type="text"
+                                    placeholder="1363-1385 Sunset Blvd Angeles, CA 90026 ,USA" required>
+                                <i class="fs-input-icon fas fa-map-marker-alt"></i>
                             </div>
-                        </div>
 
-                        {{-- <div class="col-xl-12 col-lg-12 col-md-12">
+                        </div>
+                    </div>
+
+                    {{-- <div class="col-xl-12 col-lg-12 col-md-12">
                             <div class="twm-s-map mb-5">
                                 <h4 class="section-head-small mb-4">Location</h4>
                                 <div class="twm-s-map-iframe">
@@ -141,123 +143,33 @@
 
 
 
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label>Description</label>
-                                <textarea class="form-control" name="CMP_Desc" required rows="3">Greetings! when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</textarea>
-                            </div>
-                        </div>
-
-
-                        <div class="col-lg-12 col-md-12">
-                            <div class="text-left">
-                                <button type="submit" class="site-button">Save Changes</button>
-                            </div>
-                        </div>
-
-
-                    </div>
-                </form>
-
-            </div>
-        </div>
-
-        <!--Social Network-->
-        <div class="panel panel-default">
-            <div class="panel-heading wt-panel-heading p-a20">
-                <h4 class="panel-tittle m-a0">Social Network</h4>
-            </div>
-            <div class="panel-body wt-panel-body p-a20">
-
-                <div class="row">
-
-                    <div class="col-xl-4 col-lg-6 col-md-12">
+                    <div class="col-md-12">
                         <div class="form-group">
-                            <label>Facebook</label>
-                            <div class="ls-inputicon-box">
-                                <input class="form-control wt-form-control" name="company_name" type="text"
-                                    placeholder="https://www.facebook.com/">
-                                <i class="fs-input-icon fab fa-facebook-f"></i>
-                            </div>
+                            <label>Description</label>
+                            <textarea class="form-control tinymce-editor" name="CMP_Desc" rows="3">Greetings! when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</textarea>
                         </div>
                     </div>
 
-                    <div class="col-xl-4 col-lg-6 col-md-12">
-                        <div class="form-group">
-                            <label>Twitter</label>
+                    <div class="col-xl-12 col-lg-12 col-md-12">
+                        <div class="form-group city-outer-bx has-feedback">
+                            <label>Company Logo</label>
                             <div class="ls-inputicon-box">
-                                <input class="form-control wt-form-control" name="company_name" type="text"
-                                    placeholder="https://twitter.com/">
-                                <i class="fs-input-icon fab fa-twitter"></i>
+                                <input class="form-control" name="CMP_Logo" type="file" required>
                             </div>
+
                         </div>
                     </div>
 
-                    <div class="col-xl-4 col-lg-6 col-md-12">
-                        <div class="form-group">
-                            <label>linkedin</label>
+                    <div class="col-xl-12 col-lg-12 col-md-12">
+                        <div class="form-group city-outer-bx has-feedback">
+                            <label>Company Cover</label>
                             <div class="ls-inputicon-box">
-                                <input class="form-control wt-form-control" name="company_name" type="text"
-                                    placeholder="https://in.linkedin.com/">
-                                <i class="fs-input-icon fab fa-linkedin-in"></i>
+                                <input class="form-control" name="CMP_Cover" type="file" required>
                             </div>
+
                         </div>
                     </div>
 
-                    <div class="col-xl-4 col-lg-6 col-md-12">
-                        <div class="form-group">
-                            <label>Whatsapp</label>
-                            <div class="ls-inputicon-box">
-                                <input class="form-control wt-form-control" name="company_name" type="text"
-                                    placeholder="https://www.whatsapp.com/">
-                                <i class="fs-input-icon fab fa-whatsapp"></i>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-4 col-lg-6 col-md-12">
-                        <div class="form-group">
-                            <label>Instagram</label>
-                            <div class="ls-inputicon-box">
-                                <input class="form-control wt-form-control" name="company_name" type="text"
-                                    placeholder="https://www.instagram.com/">
-                                <i class="fs-input-icon fab fa-instagram"></i>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-4 col-lg-6 col-md-12">
-                        <div class="form-group">
-                            <label>Pinterest</label>
-                            <div class="ls-inputicon-box">
-                                <input class="form-control wt-form-control" name="company_name" type="text"
-                                    placeholder="https://in.pinterest.com/">
-                                <i class="fs-input-icon fab fa-pinterest-p"></i>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-4 col-lg-6 col-md-12">
-                        <div class="form-group">
-                            <label>Tumblr</label>
-                            <div class="ls-inputicon-box">
-                                <input class="form-control wt-form-control" name="company_name" type="text"
-                                    placeholder="https://www.tumblr.com/">
-                                <i class="fs-input-icon fab fa-tumblr"></i>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-4 col-lg-6 col-md-12">
-                        <div class="form-group">
-                            <label>Youtube</label>
-                            <div class="ls-inputicon-box">
-                                <input class="form-control wt-form-control" name="company_name" type="text"
-                                    placeholder="https://www.youtube.com/">
-                                <i class="fs-input-icon fab fa-youtube"></i>
-                            </div>
-                        </div>
-                    </div>
 
                     <div class="col-lg-12 col-md-12">
                         <div class="text-left">
@@ -267,8 +179,137 @@
 
 
                 </div>
+            </form>
+
+        </div>
+    </div>
+
+    <!--Social Network-->
+    <div class="panel panel-default">
+        <div class="panel-heading wt-panel-heading p-a20">
+            <h4 class="panel-tittle m-a0">Social Network</h4>
+        </div>
+        <div class="panel-body wt-panel-body p-a20">
+
+            <div class="row">
+
+                <div class="col-xl-4 col-lg-6 col-md-12">
+                    <div class="form-group">
+                        <label>Facebook</label>
+                        <div class="ls-inputicon-box">
+                            <input class="form-control wt-form-control" name="company_name" type="text"
+                                placeholder="https://www.facebook.com/">
+                            <i class="fs-input-icon fab fa-facebook-f"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-lg-6 col-md-12">
+                    <div class="form-group">
+                        <label>Twitter</label>
+                        <div class="ls-inputicon-box">
+                            <input class="form-control wt-form-control" name="company_name" type="text"
+                                placeholder="https://twitter.com/">
+                            <i class="fs-input-icon fab fa-twitter"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-lg-6 col-md-12">
+                    <div class="form-group">
+                        <label>linkedin</label>
+                        <div class="ls-inputicon-box">
+                            <input class="form-control wt-form-control" name="company_name" type="text"
+                                placeholder="https://in.linkedin.com/">
+                            <i class="fs-input-icon fab fa-linkedin-in"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-lg-6 col-md-12">
+                    <div class="form-group">
+                        <label>Whatsapp</label>
+                        <div class="ls-inputicon-box">
+                            <input class="form-control wt-form-control" name="company_name" type="text"
+                                placeholder="https://www.whatsapp.com/">
+                            <i class="fs-input-icon fab fa-whatsapp"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-lg-6 col-md-12">
+                    <div class="form-group">
+                        <label>Instagram</label>
+                        <div class="ls-inputicon-box">
+                            <input class="form-control wt-form-control" name="company_name" type="text"
+                                placeholder="https://www.instagram.com/">
+                            <i class="fs-input-icon fab fa-instagram"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-lg-6 col-md-12">
+                    <div class="form-group">
+                        <label>Pinterest</label>
+                        <div class="ls-inputicon-box">
+                            <input class="form-control wt-form-control" name="company_name" type="text"
+                                placeholder="https://in.pinterest.com/">
+                            <i class="fs-input-icon fab fa-pinterest-p"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-lg-6 col-md-12">
+                    <div class="form-group">
+                        <label>Tumblr</label>
+                        <div class="ls-inputicon-box">
+                            <input class="form-control wt-form-control" name="company_name" type="text"
+                                placeholder="https://www.tumblr.com/">
+                            <i class="fs-input-icon fab fa-tumblr"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-lg-6 col-md-12">
+                    <div class="form-group">
+                        <label>Youtube</label>
+                        <div class="ls-inputicon-box">
+                            <input class="form-control wt-form-control" name="company_name" type="text"
+                                placeholder="https://www.youtube.com/">
+                            <i class="fs-input-icon fab fa-youtube"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12 col-md-12">
+                    <div class="text-left">
+                        <button type="submit" class="site-button">Save Changes</button>
+                    </div>
+                </div>
+
 
             </div>
+
         </div>
+    </div>
 
 </div>
+
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<script type="text/javascript">
+    tinymce.init({
+        selector: 'textarea.tinymce-editor',
+        height: 250,
+        menubar: false,
+        plugins: [
+            'advlist autolink lists link image charmap print preview anchor',
+            'searchreplace visualblocks code fullscreen',
+            'insertdatetime media table paste code help wordcount', 'image'
+        ],
+        toolbar: 'undo redo | formatselect | ' +
+            'bold italic backcolor | alignleft aligncenter ' +
+            'alignright alignjustify | bullist numlist outdent indent | ' +
+            'removeformat | help',
+        content_css: '//www.tiny.cloud/css/codepen.min.css'
+    });
+</script>

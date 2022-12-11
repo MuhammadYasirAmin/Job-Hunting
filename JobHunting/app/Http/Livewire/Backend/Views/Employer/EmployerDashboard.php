@@ -29,6 +29,16 @@ class EmployerDashboard extends Component
         $Company->CMP_Desc = $request->CMP_Desc;
         $Company->EMP_ID = Auth::guard('Employer')->user()->id;
 
+        $CompanyLogo = $request->file('CMP_Logo');
+        $logoName = 'Logo_'.time().'.'.$CompanyLogo->extension();
+        $CompanyLogo->move(public_path('Uploads/EMP/'.$Company->EMP_ID.'/'), $logoName);
+        $Company->CMP_Logo = url('Uploads/EMP/'.$Company->EMP_ID.'/'.$logoName);
+
+        $CompanyCover = $request->file('CMP_Cover');
+        $coverName = 'Cover_'.time().'.'.$CompanyCover->extension();
+        $CompanyCover->move(public_path('Uploads/EMP/'.$Company->EMP_ID.'/'), $coverName);
+        $Company->CMP_Cover = url('Uploads/EMP/'.$Company->EMP_ID.'/'.$coverName);
+
         if ($Company->save()) {
             return back()->with('Success!', 'Data Inserted Successfully!');
         }

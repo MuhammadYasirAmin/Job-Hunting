@@ -23,6 +23,8 @@ class CreateCompanyProfilesTable extends Migration
             $table->string('CMP_City');
             $table->string('CMP_PostalCode');
             $table->string('CMP_Address');
+            $table->string('CMP_Logo');
+            $table->string('CMP_Cover');
             $table->text('CMP_Desc');
             $table->bigInteger('EMP_ID')->unsigned();
             $table->timestamps();

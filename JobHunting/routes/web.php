@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Backend\Auth\Admin\LoginController;
 use App\Http\Livewire\Backend\Auth\Admin\SignupController;
 use App\Http\Livewire\Frontend\Jobs\AppliedJobs;
+use App\Http\Livewire\Frontend\Jobs\JobListing;
+use App\Http\Livewire\Frontend\Jobs\JobListingDetail;
 use App\Http\Livewire\Frontend\HomePage;
 use App\Http\Livewire\Backend\Views\Admin\AdminDashboard;
 use App\Http\Livewire\Backend\Views\Company\CompanyDashboard;
@@ -79,3 +81,5 @@ Route::prefix('Employer')->group(function () {
 
 Route::get('/', HomePage::class, )->name('Frontend.index');
 Route::get('/Jobs/Applied-Jobs', AppliedJobs::class, )->name('Frontend.appliedJobs');
+Route::get('/Jobs/Jobs-List', JobListing::class, )->name('Frontend.JobListing');
+Route::get('/Jobs/Jobs-List-Detail/{id}', JobListingDetail::class, )->name('Frontend.JobListingDetail');

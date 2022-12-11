@@ -37,61 +37,121 @@
 
                              </ul>
 
-                             <div class="tab-content" id="myTab2Content">
-                                 <!--Login Candidate Content-->
-                                 <div class="tab-pane fade show active" id="twm-login-candidate">
-                                     <div class="row">
+                             @if (Auth::guard('admin')->check())
+                                 <div class="tab-content" id="myTab2Content">
+                                     <!--Login Admin Content-->
+                                     <div class="tab-pane fade show active" id="twm-login-candidate">
+                                         <div class="row">
 
-                                         <form action="{{ route('signup.submit') }}" method="POST">
-                                             @csrf
-                                             <div class="col-lg-12">
-                                                 <div class="form-group mb-3">
-                                                     <input name="ADM_Name" type="text" required=""
-                                                         class="form-control" placeholder="Full Name:">
+                                             <form action="{{ route('Admin.SignUp.Submit') }}" method="POST">
+                                                 @csrf
+                                                 <div class="col-lg-12">
+                                                     <div class="form-group mb-3">
+                                                         <input name="ADM_Name" type="text" required=""
+                                                             class="form-control" placeholder="Full Name:">
+                                                     </div>
                                                  </div>
-                                             </div>
 
-                                             <div class="col-lg-12">
-                                                 <div class="form-group mb-3">
-                                                     <input name="ADM_Email" type="email" required=""
-                                                         class="form-control" placeholder="Email Address:">
+                                                 <div class="col-lg-12">
+                                                     <div class="form-group mb-3">
+                                                         <input name="ADM_Email" type="email" required=""
+                                                             class="form-control" placeholder="Email Address:">
+                                                     </div>
                                                  </div>
-                                             </div>
 
-                                             <div class="col-lg-12">
-                                                 <div class="form-group mb-3">
-                                                     <input name="ADM_Password" type="password" class="form-control"
-                                                         required="" placeholder="Password:">
+                                                 <div class="col-lg-12">
+                                                     <div class="form-group mb-3">
+                                                         <input name="ADM_Password" type="password" class="form-control"
+                                                             required="" placeholder="Password:">
+                                                     </div>
+                                                 </div>
+
+                                                 <div class="col-md-12">
+                                                     <div class="form-group">
+                                                         <button type="submit" class="site-button">Register
+                                                             Now</button>
+                                                     </div>
+                                                 </div>
+                                             </form>
+
+                                             <div class="col-md-12">
+                                                 <div class="form-group">
+                                                     <span class="center-text-or">Or</span>
                                                  </div>
                                              </div>
 
                                              <div class="col-md-12">
                                                  <div class="form-group">
-                                                     <button type="submit" class="site-button">Register Now</button>
+                                                     <button type="submit" class="log_with_facebook">
+                                                         <i class="fab fa-facebook"></i>
+                                                         Continue with Facebook
+                                                     </button>
                                                  </div>
                                              </div>
-                                         </form>
 
-                                         <div class="col-md-12">
-                                             <div class="form-group">
-                                                 <span class="center-text-or">Or</span>
-                                             </div>
+
                                          </div>
-
-                                         <div class="col-md-12">
-                                             <div class="form-group">
-                                                 <button type="submit" class="log_with_facebook">
-                                                     <i class="fab fa-facebook"></i>
-                                                     Continue with Facebook
-                                                 </button>
-                                             </div>
-                                         </div>
-
-
                                      </div>
-                                 </div>
 
-                             </div>
+                                 </div>
+                             @else
+                                 <div class="tab-content" id="myTab2Content">
+                                     <!--Login Candidate Content-->
+                                     <div class="tab-pane fade show active" id="twm-login-candidate">
+                                         <div class="row">
+
+                                             <form action="{{ route('Company.SignUp.Submit') }}" method="POST">
+                                                 @csrf
+                                                 <div class="col-lg-12">
+                                                     <div class="form-group mb-3">
+                                                         <input name="ADM_Name" type="text" required=""
+                                                             class="form-control" placeholder="Full Name:">
+                                                     </div>
+                                                 </div>
+
+                                                 <div class="col-lg-12">
+                                                     <div class="form-group mb-3">
+                                                         <input name="ADM_Email" type="email" required=""
+                                                             class="form-control" placeholder="Email Address:">
+                                                     </div>
+                                                 </div>
+
+                                                 <div class="col-lg-12">
+                                                     <div class="form-group mb-3">
+                                                         <input name="ADM_Password" type="password" class="form-control"
+                                                             required="" placeholder="Password:">
+                                                     </div>
+                                                 </div>
+
+                                                 <div class="col-md-12">
+                                                     <div class="form-group">
+                                                         <button type="submit" class="site-button">Register
+                                                             Now</button>
+                                                     </div>
+                                                 </div>
+                                             </form>
+
+                                             <div class="col-md-12">
+                                                 <div class="form-group">
+                                                     <span class="center-text-or">Or</span>
+                                                 </div>
+                                             </div>
+
+                                             <div class="col-md-12">
+                                                 <div class="form-group">
+                                                     <button type="submit" class="log_with_facebook">
+                                                         <i class="fab fa-facebook"></i>
+                                                         Continue with Facebook
+                                                     </button>
+                                                 </div>
+                                             </div>
+
+
+                                         </div>
+                                     </div>
+
+                                 </div>
+                             @endif
                          </div>
                      </div>
                  </div>

@@ -15,21 +15,21 @@ class CreateJobPostedsTable extends Migration
     {
         Schema::create('job_posteds', function (Blueprint $table) {
             $table->id();
-            $table->string('Job_Title');
-            $table->string('Job_Category');
-            $table->string('Job_Type');
-            $table->string('Job_Salary');
-            $table->string('Job_Experience');
-            $table->string('Job_Qualification');
-            $table->string('Job_Gender');
-            $table->string('Job_Country');
-            $table->string('Job_City');
+            $table->string('Job_Title', 50);
+            $table->string('Job_Category', 50);
+            $table->string('Job_Type', 50);
+            $table->bigInteger('Job_Salary')->unsigned();
+            $table->bigInteger('Job_Experience')->unsigned();
+            $table->string('Job_Qualification', 50);
+            $table->string('Job_Gender', 50);
+            $table->string('Job_Country', 50);
+            $table->string('Job_City', 50);
             $table->string('Job_Email');
             $table->string('Job_Website');
             $table->string('Job_Address');
             $table->text('Job_Desc');
-            $table->date('Job_SDate');
-            $table->date('Job_EDate');
+            $table->string('Job_SDate');
+            $table->string('Job_EDate');
             $table->bigInteger('EMP_ID')->unsigned();
             $table->bigInteger('CMP_ID')->unsigned();
             $table->timestamps();

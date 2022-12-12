@@ -12,9 +12,10 @@ class JobListingDetail extends Component
     public function render(Request $request)
     {
         $EMP_ID = $request->id;
-        $JobsList = CompanyProfiles::with("jobs", "job_questions")->where('EMP_ID', $EMP_ID)->first();
-        // dd($JobsList);
+        $JobsList = CompanyProfiles::with(["jobs", "job_questions", "requirements", "responsibilites"])->where('EMP_ID', $EMP_ID)->first();
+        // dd($JobsList = $Jobs->toArray());
+        // $JobsList = $Jobs->toArray();
 
-        return view('livewire.frontend.jobs.job-listing-detail')->layout('layouts.main')->with(['JobsList' => $JobsList]);
+        return view('livewire.frontend.jobs.job-listing-detail', compact('JobsList'))->layout('layouts.main');
     }
 }

@@ -80,6 +80,6 @@ Route::prefix('Employer')->group(function () {
 });
 
 Route::get('/', HomePage::class, )->name('Frontend.index');
-Route::get('/Jobs/Applied-Jobs', AppliedJobs::class, )->name('Frontend.appliedJobs');
+Route::get('/Jobs/Applied-Jobs/{JOB_ID}', AppliedJobs::class, )->name('Frontend.appliedJobs');
 Route::get('/Jobs/Jobs-List', JobListing::class, )->name('Frontend.JobListing');
 Route::get('/Jobs/Jobs-List-Detail/{id}', JobListingDetail::class, )->name('Frontend.JobListingDetail');

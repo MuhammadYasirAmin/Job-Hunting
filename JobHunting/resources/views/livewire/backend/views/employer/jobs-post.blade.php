@@ -277,31 +277,33 @@
                 <div class="col-xl-12 col-lg-12 col-md-12">
                     <div class="form-group">
                         <label>Requirements</label>
-                        <div class="ls-inputicon-box input_fields_custom">
+                        <div class="ls-inputicon-box requirement">
                             <input class="form-control" name="Job_Req[]" type="text"
                                 placeholder="Enter Any Requirements">
                             <i class="fs-input-icon fa fa-user"></i>
                         </div>
                         <div class="text-right m-tb10">
-                            <button class="add_field_custom">Add More Req <i class="fa fa-plus"></i></button>
+                            <button class="add_field_custom " id="requirements">Add More Req <i
+                                    class="fa fa-plus"></i></button>
                         </div>
                     </div>
                 </div>
 
                 {{-- Job Requirements --}}
-                {{-- <div class="col-xl-12 col-lg-12 col-md-12">
+                <div class="col-xl-12 col-lg-12 col-md-12">
                     <div class="form-group">
                         <label>Responsibilities</label>
-                        <div class="ls-inputicon-box input_fields_custom">
+                        <div class="ls-inputicon-box responsi">
                             <input class="form-control" name="Job_Respons[]" type="text"
                                 placeholder="Enter Any Responsibility">
                             <i class="fs-input-icon fa fa-user"></i>
                         </div>
                         <div class="text-right m-tb10">
-                            <button class="add_field_custom">Add More Res <i class="fa fa-plus"></i></button>
+                            <button class="add_field_custom" id="responsibility">Add More Res <i
+                                    class="fa fa-plus"></i></button>
                         </div>
                     </div>
-                </div> --}}
+                </div>
 
                 <div class="panel-heading wt-panel-heading p-a20 m-b20">
                     <h4 class="panel-tittle m-a0">Make a Test For Current Job</h4>

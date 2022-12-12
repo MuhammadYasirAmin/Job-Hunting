@@ -32,7 +32,7 @@
                         <li class="has-child"><a href="javascript:void(0);">Jobs</a>
                             <ul class="sub-menu">
                                 <li><a href="{{ route('Frontend.JobListing') }}">All Jobs</a></li>
-                                <li><a href="{{ route('Frontend.appliedJobs') }}">Apply Jobs</a></li>
+                                {{-- <li><a href="{{ route('Frontend.appliedJobs') }}">Apply Jobs</a></li> --}}
                             </ul>
                         </li>
                     </ul>

@@ -31,4 +31,23 @@ class CompanyProfiles extends Model
     {
         return $this->hasMany(JobQuestions::class, 'JOB_ID');
     }
+    /**
+     * Get all of the requirements for the JobPosted
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function requirements()
+    {
+        return $this->hasMany(JobRequirements::class, 'JOB_ID');
+    }
+
+    /**
+     * Get all of the responsibilites for the JobPosted
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function responsibilites()
+    {
+        return $this->hasMany(JobResponsibilities::class, 'JOB_ID');
+    }
 }

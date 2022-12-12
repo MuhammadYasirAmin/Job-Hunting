@@ -43,7 +43,7 @@
 
                                 <div class="twm-jobs-grid-style1">
                                     <div class="twm-media">
-                                        <img src="{{ $Job->CMP_Logo ? url('Uploads/EMP/1/' . $Job->CMP_Logo) : asset('images/jobs-company/pic1.jpg') }}"
+                                        <img src="{{ $Job->CMP_Logo ? $Job->CMP_Logo : asset('images/jobs-company/pic1.jpg') }}"
                                             alt="#">
                                     </div>
                                     <span class="twm-job-post-duration">1 days ago</span>

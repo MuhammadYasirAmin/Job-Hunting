@@ -665,11 +665,12 @@ All JavaScript fuctions Start
     var max_fields = 100; //maximum input boxes allowed
     var wrapper = $(".input_fields_youtube"); //Fields wrapper
     var wrapper_2 = $(".input_fields_vimeo"); //Fields wrapper
-    var wrapper_3 = $(".input_fields_custom"); //Fields wrapper
-    var wrapper_4 = $(".input_fields_custom"); //Fields wrapper
+    var wrapper_3 = $(".responsi"); //Fields wrapper
+    var wrapper_4 = $(".requirement"); //Fields wrapper
     var add_button_youtube = $(".add_field_youtube"); //Add button ID
     var add_button_vimeo = $(".add_field_vimeo"); //Add button ID
-    var add_custom_field = $(".add_field_custom"); //Add button ID
+    var add_custom_field = $("#responsibility"); //Add button ID
+    var add_custom_Res = $("#requirements"); //Add button ID
 
     var x = 1; //initlal text box count
     $(add_button_youtube).click(function (e) { //on add input button click
@@ -695,6 +696,15 @@ All JavaScript fuctions Start
         if (x < max_fields) { //max input box allowed
             x++; //text box increment
             $(wrapper_3).append('<div class="ls-inputicon-box"><input class="form-control m-tb10 wt-form-control" name="Job_Req[]" type="text" placeholder="Enter Any Requirements"><i class="fs-input-icon fa fa-user"></i><a href="#" class="remove_field"><i class="fa fa-times"></i></a></div>'); //add input box
+        }
+    });
+
+    var x = 1; //initlal text box count
+    $(add_custom_Res).click(function (e) { //on add input button click
+        e.preventDefault();
+        if (x < max_fields) { //max input box allowed
+            x++; //text box increment
+            $(wrapper_4).append('<div class="ls-inputicon-box"><input class="form-control m-tb10 wt-form-control" name="Job_Respons[]" type="text" placeholder="Enter Any Responsibility"><i class="fs-input-icon fa fa-user"></i><a href="#" class="remove_field"><i class="fa fa-times"></i></a></div>'); //add input box
         }
     });
 

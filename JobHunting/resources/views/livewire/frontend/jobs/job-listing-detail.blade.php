@@ -40,7 +40,7 @@
                             <div class="twm-job-self-info">
                                 <div class="twm-job-self-top">
                                     <div class="twm-media-bg">
-                                        <img src="{{ $JobsList->CMP_Cover ? url('Uploads/EMP/1/' . $JobsList->CMP_Cover) : asset('images/job-detail-bg.jpg') }}"
+                                        <img src="{{ $JobsList->CMP_Cover ? $JobsList->CMP_Cover : asset('images/job-detail-bg.jpg') }}"
                                             alt="#">
                                         <div class="twm-jobs-category green"><span class="twm-bg-green">New</span></div>
                                     </div>
@@ -49,7 +49,7 @@
                                     <div class="twm-mid-content">
 
                                         <div class="twm-media">
-                                            <img src="{{ $JobsList->CMP_Logo ? url('Uploads/EMP/1/' . $JobsList->CMP_Logo) : asset('images/jobs-company/pic1.jpg') }}"
+                                            <img src="{{ $JobsList->CMP_Logo ? $JobsList->CMP_Logo : asset('images/jobs-company/pic1.jpg') }}"
                                                 alt="#">
                                         </div>
 
@@ -74,7 +74,8 @@
                                         </div>
 
                                         <div class="twm-job-self-bottom">
-                                            <a class="site-button" data-bs-toggle="modal" href="#apply_job_popup"
+                                            <a class="site-button"
+                                                href="/Jobs/Applied-Jobs/{{ $JobsList->jobs()->first()->CMP_ID }}/{{ $JobsList->jobs()->first()->id }}"
                                                 role="button">
                                                 Apply Now
                                             </a>
@@ -97,23 +98,6 @@
                                 <i class="feather-check"></i>
                                 Must be able to communicate with others to convey information effectively.
                             </li>
-                            <li>
-                                <i class="feather-check"></i>
-                                Personally passionate and up to date with current trends and technologies, committed to
-                                quality and comfortable working with adult media.
-                            </li>
-                            <li>
-                                <i class="feather-check"></i>
-                                Rachelor or Master degree level educational background.
-                            </li>
-                            <li>
-                                <i class="feather-check"></i>
-                                4 years relevant PHP dev experience.
-                            </li>
-                            <li>
-                                <i class="feather-check"></i>
-                                Troubleshooting, testing and maintaining the core product software and databases.
-                            </li>
 
                         </ul>
 
@@ -122,29 +106,6 @@
                             <li>
                                 <i class="feather-check"></i>
                                 Establish and promote design guidelines, best practices and standards.
-                            </li>
-                            <li>
-                                <i class="feather-check"></i>
-                                Accurately estimate design tickets during planning sessions.
-                            </li>
-                            <li>
-                                <i class="feather-check"></i>
-                                Partnering with product and engineering to translate business and user goals into
-                                elegant and practical designs. that can deliver on key business and user metrics.
-                            </li>
-                            <li>
-                                <i class="feather-check"></i>
-                                Create wireframes, storyboards, user flows, process flows and site maps to communicate
-                                interaction and design.
-                            </li>
-                            <li>
-                                <i class="feather-check"></i>
-                                Present and defend designs and key deliverables to peers and executive level
-                                stakeholders.
-                            </li>
-                            <li>
-                                <i class="feather-check"></i>
-                                Execute all visual design stages from concept to final hand-off to engineering.
                             </li>
 
                         </ul>
@@ -437,7 +398,7 @@
                         <div class="twm-s-info3">
                             <div class="twm-s-info-logo-section">
                                 <div class="twm-media">
-                                    <img src="{{ $JobsList->CMP_Logo ? url('Uploads/EMP/1/' . $JobsList->CMP_Logo) : asset('images/jobs-company/pic1.jpg') }}"
+                                    <img src="{{ $JobsList->CMP_Logo ? $JobsList->CMP_Logo : asset('images/jobs-company/pic1.jpg') }}"
                                         alt="#">
                                 </div>
                                 <h4 class="twm-title">{{ $JobsList->jobs()->first()->Job_Title }}</h4>
@@ -463,7 +424,7 @@
                                         <i class="fas fa-at"></i>
                                         <span class="twm-title">Email</span>
                                         <div class="twm-s-info-discription">
-                                            {{ $JobsList->CMP_Email  }}</div>
+                                            {{ $JobsList->CMP_Email }}</div>
                                     </div>
                                 </li>
                                 <li>

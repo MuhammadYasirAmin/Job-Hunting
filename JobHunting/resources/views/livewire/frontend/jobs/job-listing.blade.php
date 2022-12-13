@@ -49,7 +49,7 @@
                                     <span class="twm-job-post-duration">1 days ago</span>
                                     <div class="twm-jobs-category green"><span class="twm-bg-green">New</span></div>
                                     <div class="twm-mid-content">
-                                        <a href="job-detail.html" class="twm-job-title">
+                                        <a href="/Jobs/Jobs-List-Detail/{{ $Job->id }}" class="twm-job-title">
                                             <h4>{{ $Job->jobs()->first()->Job_Title }}</h4>
                                         </a>
                                         <p class="twm-job-address">{{ $Job->jobs()->first()->Job_Address }}</p>
@@ -61,7 +61,8 @@
                                         <div class="twm-jobs-amount">Rs.
                                             {{ number_format(intval($Job->jobs()->first()->Job_Salary)) }} <span>/
                                                 Month</span></div>
-                                        <a href="/Jobs/Jobs-List-Detail/{{ $Job->EMP_ID }}" class="twm-jobs-browse site-text-primary">Browse
+                                        <a href="/Jobs/Jobs-List-Detail/{{ $Job->id }}"
+                                            class="twm-jobs-browse site-text-primary">Browse
                                             Job</a>
                                     </div>
                                 </div>

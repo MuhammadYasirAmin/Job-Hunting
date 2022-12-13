@@ -75,7 +75,7 @@
 
                                         <div class="twm-job-self-bottom">
                                             <a class="site-button"
-                                                href="/Jobs/Applied-Jobs/{{ $JobsList->jobs()->first()->CMP_ID }}/{{ $JobsList->jobs()->first()->id }}"
+                                                href="/Jobs/Applied-Jobs/{{ $JobsList->jobs()->first()->id }}"
                                                 role="button">
                                                 Apply Now
                                             </a>
@@ -94,19 +94,23 @@
 
                         <h4 class="twm-s-title">Requirments:</h4>
                         <ul class="description-list-2">
-                            <li>
-                                <i class="feather-check"></i>
-                                Must be able to communicate with others to convey information effectively.
-                            </li>
+                            @foreach ($JobsList->requirements as $req)
+                                <li>
+                                    <i class="feather-check"></i>
+                                    {{ $req->Requirement }}
+                                </li>
+                            @endforeach
 
                         </ul>
 
                         <h4 class="twm-s-title">Responsabilities:</h4>
                         <ul class="description-list-2">
-                            <li>
-                                <i class="feather-check"></i>
-                                Establish and promote design guidelines, best practices and standards.
-                            </li>
+                            @foreach ($JobsList->responsibilites as $req)
+                                <li>
+                                    <i class="feather-check"></i>
+                                    {{ $req->Responsibilities }}
+                                </li>
+                            @endforeach
 
                         </ul>
 

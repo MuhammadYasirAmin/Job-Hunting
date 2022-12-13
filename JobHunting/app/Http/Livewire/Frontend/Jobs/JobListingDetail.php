@@ -12,7 +12,7 @@ class JobListingDetail extends Component
     public function render(Request $request)
     {
         $EMP_ID = $request->id;
-        $JobsList = CompanyProfiles::with(["jobs", "job_questions", "requirements", "responsibilites"])->where('EMP_ID', $EMP_ID)->first();
+        $JobsList = CompanyProfiles::with(["jobs", "job_questions", "requirements", "responsibilites"])->where('id', $EMP_ID)->first();
         // dd($JobsList = $Jobs->toArray());
         // $JobsList = $Jobs->toArray();
 

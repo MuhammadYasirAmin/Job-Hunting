@@ -33,6 +33,16 @@ class JobPosted extends Model
     }
 
     /**
+     * Get all of the subjective for the JobPosted
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function subjective()
+    {
+        return $this->hasMany(JobSubjective::class, 'JOB_ID');
+    }
+
+    /**
      * Get all of the requirements for the JobPosted
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany

@@ -41,7 +41,7 @@ class JobsPost extends Component
         $JobPosted->Job_SDate = $request->Job_SDate;
         $JobPosted->Job_EDate = $request->Job_EDate;
         $JobPosted->EMP_ID = $User_ID;
-        $CompanyID = CompanyProfiles::find($User_ID);
+        $CompanyID = CompanyProfiles::where('EMP_ID', $User_ID)->first();
         // dd($CompanyID);
         $JobPosted->CMP_ID = $CompanyID->id;
 
@@ -61,6 +61,11 @@ class JobsPost extends Component
             foreach ($request->Job_Questions as $key => $value) {
                 // $insertQuery = ;
                 DB::insert("INSERT INTO `job_questions`(`Questions`, `Option_A`, `Option_B`, `Option_C`, `Option_D`, `is_Correct`, `EMP_ID`, `JOB_ID`, `CMP_ID`) VALUES ('". $request->Job_Questions[$key] ."', '".$request->Option_A[$key]."', '".$request->Option_B[$key]."', '".$request->Option_C[$key]."', '".$request->Option_D[$key]."', '".$request->Is_Correct[$key]."', '".$User_ID."', '".$Job_ID."', '".$CompanyID->id."')");
+            }
+
+            foreach ($request->Job_Subjective_Question as $key => $value) {
+                // $insertQuery = ;
+                DB::insert("INSERT INTO `job_subjectives`(`Sub_Questions`, `Sub_Answers`, `EMP_ID`, `JOB_ID`, `CMP_ID`) VALUES ('". $request->Job_Subjective_Question[$key] ."', '".$request->Job_Subjective_Answers[$key]."', '".$User_ID."', '".$Job_ID."', '".$CompanyID->id."')");
             }
 
             return back()->with('Success!', 'Data Inserted Successfully!');

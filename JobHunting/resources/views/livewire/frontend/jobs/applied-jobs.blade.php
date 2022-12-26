@@ -33,7 +33,7 @@
     <div class="container">
         <div class="row d-flex justify-content-center">
 
-            <div class="col-lg-8 col-md-12">
+            <div class="col-lg-10 col-md-12">
                 <div class="twm-right-section-panel-wrap2">
                     <!--Filter Short By-->
                     <div class="twm-right-section-panel site-bg-primary">
@@ -41,7 +41,7 @@
                         <!--Basic Information-->
                         <div class="panel panel-default">
                             <div class="panel-heading wt-panel-heading p-a20">
-                                <h4 class="panel-tittle m-a0">Register Peofessional</h4>
+                                <h4 class="panel-tittle m-a0">Register as Professional</h4>
                             </div>
                             <div class="panel-body wt-panel-body p-a20 ">
 
@@ -69,6 +69,11 @@
                                         <li class="nav-item">
                                             <button class="nav-link" data-bs-toggle="tab" data-bs-target="#Test"
                                                 type="button" role="tab">Interview Questions</button>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#Subjective"
+                                                type="button" role="tab">Interview Questions II</button>
                                         </li>
 
                                     </ul>
@@ -377,7 +382,37 @@
 
                                         </div>
 
+                                        <div class="tab-pane fade" id="Subjective">
 
+                                            <div class="row">
+
+                                                <div class="col-xl-12 col-lg-12">
+                                                        <!--Description-->
+                                                        <div class="form-group">
+                                                            <label>Introduced Yourself</label>
+                                                            <textarea class="form-control" row="3" name="Job_Subjective_Answers[]"></textarea>
+                                                        </div>
+                                                    </div>
+
+                                                @foreach ($JobsList->subjective as $Job)
+                                                    <div class="col-xl-12 col-lg-12">
+                                                        <!--Description-->
+                                                        <div class="form-group">
+                                                            <label>{{ $Job->Sub_Questions }}</label>
+                                                            <textarea class="form-control" row="3" name="Job_Subjective_Answers[]"></textarea>
+                                                        </div>
+                                                    </div>
+                                                @endforeach
+
+                                                {{-- <div class="col-xl-12 col-lg-12 col-md-12">
+                                                    <div class="text-left">
+                                                        <button type="submit" class="site-button">Continue</button>
+                                                    </div>
+                                                </div> --}}
+
+                                            </div>
+
+                                        </div>
 
                                     </div>
                                 </div>

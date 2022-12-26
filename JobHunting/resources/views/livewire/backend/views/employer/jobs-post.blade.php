@@ -1,3 +1,9 @@
+<style>
+    textarea {
+        /* min-height: calc(1.5em + 0.75rem + 2px); */
+        height: 100% !important;
+    }
+</style>
 @section('JobPost', 'active')
 @section('InnerBanner')
     <!-- INNER PAGE BANNER -->
@@ -56,17 +62,13 @@
                             <select class="wt-select-box selectpicker" name="Job_Category" data-live-search="true"
                                 title="" id="j-category" data-bv-field="size" required>
                                 <option disabled selected value="">Select Category</option>
-                                <option value="Accounting and Finance">Accounting and Finance</option>
-                                {{-- <option value="">Clerical &amp; Data Entry</option> --}}
-                                <option value="Counseling">Counseling</option>
-                                {{-- <option value="">Court Administration</option>
-                                <option value="">Human Resources</option>
-                                <option value="">Investigative</option>
-                                <option value="">IT and Computers</option>
-                                <option value="">Law Enforcement</option>
-                                <option value="">Management</option>
-                                <option value="">Miscellaneous</option>
-                                <option value="">Public Relations</option> --}}
+                                <option value="Full Stack Developer">Full Stack Developer</option>
+                                <option value="Backend Developer">Backend Developer</option>
+                                <option value="Search Engine Optimization">Search Engine Optimization</option>
+                                <option value="Content Writer">Content Writer</option>
+                                <option value="Social Media Marketing">Social Media Marketing</option>
+                                <option value="Digital Marketing">Digital Marketing</option>
+                                <option value="Human Resources">Human Resources</option>
                             </select>
                             <i class="fs-input-icon fa fa-border-all"></i>
                         </div>
@@ -309,7 +311,7 @@
                     <h4 class="panel-tittle m-a0">Make a Test For Current Job</h4>
                 </div>
 
-                <div class="row">
+                <div class="row row-subjective">
                     <!--Question-->
                     <div class="col-xl-12 col-lg-6 col-md-12">
                         <div class="form-group">
@@ -370,6 +372,33 @@
 
                 <div id="questions"></div>
 
+                <div class="row">
+                    <!--Job Question-->
+                    <div class="col-xl-12 col-lg-6 col-md-12">
+                        <div class="form-group">
+                            <label>Subjective </label>
+                            <div class="ls-inputicon-box">
+                                <input class="form-control" name="Job_Subjective_Question[]" type="text"
+                                    placeholder="Introduced Yourself?" required>
+                                <i class="fs-input-icon fa fa-question"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Description-->
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Answers</label>
+                            <textarea class="form-control" row="3" name="Job_Subjective_Answers[]"
+                                value="Greetings! We are Galaxy Software Development Company. We hope you enjoy our services and quality."></textarea>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <button type="button" id="add-question_I" class="btn btn-success m-r5">Add</button>
+                    </div>
+                </div>
+
+                <div id="subjective-questions-job"></div>
+
                 <div class="col-lg-12 col-md-12">
                     <div class="text-left">
                         <button type="submit" class="site-button m-r5">Publish Job</button>
@@ -408,10 +437,9 @@
         // var new_questions =;
 
         $("#add-question").click(function() {
-            ++count;
             if (min_question <= max_question) {
                 $("#questions").append(
-                    '<div class="row"><!--Question--><div class="col-xl-12 col-lg-6 col-md-12"><div class="form-group"><label>Enter Any Question Relevent to Job.</label><div class="ls-inputicon-box"><input class="form-control" name="Job_Questions[]" type="text"placeholder="Ex: What is the key difference between HTML Elements and Tags?"><i class="fs-input-icon fa fa-question"></i></div></div></div>{{-- Answers --}}<div class="col-xl-3 col-lg-3 col-md-3"><div class="form-group"><label>Option A</label><input class="form-control" name="Option_A[]" type="text" placeholder="Ex: Answer A"><input class="form-check-input" type="radio" name="Is_Correct[' +
+                    '<div class="row row-subjective"><!--Question--><div class="col-xl-12 col-lg-6 col-md-12"><div class="form-group"><label>Enter Any Question Relevent to Job.</label><div class="ls-inputicon-box"><input class="form-control" name="Job_Questions[]" type="text"placeholder="Ex: What is the key difference between HTML Elements and Tags?"><i class="fs-input-icon fa fa-question"></i></div></div></div>{{-- Answers --}}<div class="col-xl-3 col-lg-3 col-md-3"><div class="form-group"><label>Option A</label><input class="form-control" name="Option_A[]" type="text" placeholder="Ex: Answer A"><input class="form-check-input" type="radio" name="Is_Correct[' +
                     count + ']" id="Option_A_' +
                     count + '" value="Option A"><label class="form-check-label" for="Option_A_' +
                     count +
@@ -431,13 +459,32 @@
                 );
                 min_question++;
             }
-            console.log(count);
+            count++;
         });
         $("#questions").on('click', '#remove-question', function() {
-            --count;
+            count--;
             $(this).closest('.row').remove();
             min_question--;
-            console.log(count);
+        });
+
+        // Multiples Questions Add
+        var min_question_I = 1;
+        var max_question_I = 25;
+
+        // var new_questions =;
+
+        $("#add-question_I").click(function() {
+            if (min_question_I <= max_question_I) {
+                $("#subjective-questions-job").append(
+                    '<div class="row"><!--Job Question--><div class="col-xl-12 col-lg-6 col-md-12"><div class="form-group"><label>Subjective </label><div class="ls-inputicon-box"><input class="form-control" name="Job_Subjective_Question[]" type="text" placeholder="Introduced Yourself?" required><i class="fs-input-icon fa fa-question"></i></div></div></div><!--Description--><div class="col-md-12"><div class="form-group"><label>Answers</label><textarea class="form-control" row="3" name="Job_Subjective_Answers[]"value="Greetings! We are Galaxy Software Development Company. We hope you enjoy our services and quality."></textarea></div></div></div><div class="text-right"><button type="button" id="remove-question_I" class="btn btn-danger m-r5">Remove</button></div>'
+                );
+                min_question_I++;
+            }
+        });
+        $("#subjective-questions-job").on('click', '#remove-question_I', function() {
+            console.log('clicked');
+            $(this).closest('.row-subjective').remove();
+            min_question_I--;
         });
     });
 </script>

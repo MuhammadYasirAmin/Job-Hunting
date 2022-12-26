@@ -5,12 +5,12 @@ namespace App\Models\CMP;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class JobQuestions extends Model
+class JobSubjective extends Model
 {
     use HasFactory;
-    protected $table = 'job_questions';
+    protected $table = 'job_subjectives';
 
-    protected $fillable = ['Questions', 'Option_A', 'Option_B', 'Option_C', 'Option_D', 'is_Correct', 'EMP_ID', 'JOB_ID', 'CMP_ID'];
+    protected $fillable = ['Sub_Questions', 'Sub_Answers', 'EMP_ID', 'JOB_ID', 'CMP_ID'];
 
     public function company()
     {

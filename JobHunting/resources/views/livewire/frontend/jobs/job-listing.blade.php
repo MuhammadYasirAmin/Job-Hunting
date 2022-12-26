@@ -32,46 +32,51 @@
         <div class="row">
 
             <div class="col-lg-12 col-md-12">
-                @if ($JobsList == null)
-                    <h1>There is no Jobs</h1>
-                @else
-                    <div class="row">
-                        <!--Block one-->
-                        @foreach ($JobsList as $Job)
-                            {{-- {{ dd($Job->jobs) }} --}}
+                <div class="row">
+                    <!--Block one-->
+                    @forelse ($JobsList as $key => $Job)
+                        @forelse ($JobsList[$key]['jobs'] as $Job)
+                            {{-- {{ dd($JobsList[0]['jobs']) }} --}}
                             <div class="col-lg-6 col-md-12 m-b30">
 
                                 <div class="twm-jobs-grid-style1">
                                     <div class="twm-media">
-                                        <img src="{{ $Job->CMP_Logo ? $Job->CMP_Logo : asset('images/jobs-company/pic1.jpg') }}"
+                                        <img src="{{ $JobsList[$key]['CMP_Logo'] ? $JobsList[$key]['CMP_Logo'] : asset('images/jobs-company/pic1.jpg') }}"
                                             alt="#">
                                     </div>
                                     <span class="twm-job-post-duration">1 days ago</span>
                                     <div class="twm-jobs-category green"><span class="twm-bg-green">New</span></div>
                                     <div class="twm-mid-content">
-                                        <a href="/Jobs/Jobs-List-Detail/{{ $Job->id }}" class="twm-job-title">
-                                            <h4>{{ $Job->jobs()->first()->Job_Title }}</h4>
+                                        <a href="/Jobs/Jobs-List-Detail/{{ $JobsList[$key]['id'] }}"
+                                            class="twm-job-title">
+                                            <h4>{{ $Job['Job_Title'] }}</h4>
                                         </a>
-                                        <p class="twm-job-address">{{ $Job->jobs()->first()->Job_Address }}</p>
-                                        <a href="{{ $Job->jobs()->first()->Job_Website }}"
-                                            class="twm-job-websites site-text-primary">Company Website</a>
+                                        <p class="twm-job-address">{{ $Job['Job_Address'] }}</p>
+                                        <a href="{{ $Job['Job_Website'] }}"
+                                            class="twm-job-websites site-text-primary">Company
+                                            Website</a>
                                     </div>
                                     <div class="twm-right-content">
 
                                         <div class="twm-jobs-amount">Rs.
-                                            {{ number_format(intval($Job->jobs()->first()->Job_Salary)) }} <span>/
+                                            {{ number_format(intval($Job['Job_Salary'])) }} <span>/
                                                 Month</span></div>
-                                        <a href="/Jobs/Jobs-List-Detail/{{ $Job->id }}"
+                                        <a href="/Jobs/Jobs-List-Detail/{{ $JobsList[$key]['id'] }}"
                                             class="twm-jobs-browse site-text-primary">Browse
                                             Job</a>
                                     </div>
                                 </div>
 
                             </div>
-                        @endforeach
+                        @empty
+                            <h1>There is no Jobs</h1>
+                        @endforelse
+                    @empty
+                        <h1>There is no Jobs</h1>
+                    @endforelse
 
-                    </div>
-                @endif
+                </div>
+
 
 
                 {{-- <div class="pagination-outer">

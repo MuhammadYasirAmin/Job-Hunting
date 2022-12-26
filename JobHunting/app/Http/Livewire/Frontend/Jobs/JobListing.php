@@ -9,9 +9,10 @@ class JobListing extends Component
 {
     public function render()
     {
-        $JobsList = CompanyProfiles::with("jobs", "job_questions")->get();
-        // dd($JobsList);
+        $Jobs = CompanyProfiles::with("jobs", "job_questions")->get();
+        $JobsList = $Jobs->toArray();
+        // dd($JobsList->toArray());
 
-        return view('livewire.frontend.jobs.job-listing')->layout('layouts.main')->with(['JobsList' => $JobsList]);
+        return view('livewire.frontend.jobs.job-listing', compact('JobsList'))->layout('layouts.main');
     }
 }

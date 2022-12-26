@@ -13,7 +13,7 @@ class JobListingDetail extends Component
     {
         $EMP_ID = $request->id;
         $JobsList = CompanyProfiles::with(["jobs", "job_questions", "requirements", "responsibilites"])->where('id', $EMP_ID)->first();
-        // dd($JobsList = $Jobs->toArray());
+        // dd($JobsList->toArray());
         // $JobsList = $Jobs->toArray();
 
         return view('livewire.frontend.jobs.job-listing-detail', compact('JobsList'))->layout('layouts.main');
